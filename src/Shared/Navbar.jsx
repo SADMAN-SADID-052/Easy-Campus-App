@@ -24,7 +24,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             `flex items-center  ${isActive ? " text-white" : "text-[#0099FF]"}`
           }
-          to="/apartment"
+          to="/events"
         >
           <p className="text-sm font-bold ">Events</p>
         </NavLink>
@@ -34,7 +34,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             `flex items-center  ${isActive ? " text-white" : "text-[#0099FF]"}`
           }
-          to="/apartment"
+          to="/addEvent"
         >
           <p className="text-sm font-bold ">Add Event</p>
         </NavLink>
@@ -44,7 +44,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             `flex items-center  ${isActive ? " text-white" : "text-[#0099FF]"}`
           }
-          to="/apartment"
+          to="/myEvent"
         >
           <p className="text-sm font-bold ">My Event</p>
         </NavLink>
@@ -56,7 +56,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar shadow-sm fixed z-50  bg-[#001F3F]">
+      <div className="navbar shadow-sm   bg-[#001F3F]">
         <div className="navbar-start">
           <div className="dropdown text-white text-3xl bg-amber-700 rounded-md">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

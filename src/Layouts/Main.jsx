@@ -7,6 +7,7 @@ const Main = () => {
         <div>
 
             <Home></Home>
+            {/* <Outlet></Outlet> */}
         
             
         </div>
