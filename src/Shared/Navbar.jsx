@@ -1,10 +1,11 @@
-import React, {  useState } from "react";
+import {  useContext, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 import { Link, NavLink } from "react-router";
-// import { Link, NavLink } from "react-router-dom";
-// import { AuthContext } from "../Provider/AuthProvider";
+
+;
 
 const Navbar = () => {
-//   const { user, logOut } = useContext(AuthContext);
+const { user, logOut } = useContext(AuthContext);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const links = (
@@ -97,7 +98,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          {/* {user ? (
+          {user ? (
             <div className="relative">
               <img
                 onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -111,19 +112,7 @@ const Navbar = () => {
                     {user.displayName}
                   </div>
                   <hr />
-                  <Link
-                    to="/dashboard"
-                    className="btn btn-error w-full mt-2 hover:bg-black"
-                  >
-                    <div className="flex gap-1 items-center">
-                      <img
-                        className="w-5"
-                        src="https://cdn-icons-png.freepik.com/256/16596/16596825.png?ga=GA1.1.94081497.1723952170&semt=ais_hybrid"
-                        alt=""
-                      />
-                      <p className="text-white ">Dashboard</p>
-                    </div>
-                  </Link>
+                
                   <button
                     onClick={logOut}
                     className="w-full text-left px-4 py-2 text-sm text-white hover:bg-black font-bold btn btn-primary mt-2"
@@ -140,11 +129,11 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-          ) : ( */}
+          ) : (
             <Link to="/auth/login">
               <p className="text-[#0099FF] p-7 font-bold hover:text-white text-xl">Login</p>
             </Link>
-          {/* )} */}
+          )}
         </div>
       </div>
     </div>

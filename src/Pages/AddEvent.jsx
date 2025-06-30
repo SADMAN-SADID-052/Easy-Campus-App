@@ -1,9 +1,13 @@
 import React from 'react';
+import Navbar from '../Shared/Navbar';
 
 const AddEvent = () => {
     return (
         <div>
-            <p>Add all event</p>
+            <header>
+                <Navbar></Navbar>
+            </header>
+            <p className='text-white'>Add all event</p>
         </div>
     );
 };
