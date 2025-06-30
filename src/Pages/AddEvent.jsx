@@ -13,6 +13,7 @@ const AddEvent = () => {
 
     const form = e.target;
     const title = form.title.value;
+    const email = user?.email;
     const name = form.name.value;
     const datetime = form.datetime.value;
     const location = form.location.value;
@@ -22,6 +23,7 @@ const AddEvent = () => {
     const newEvent = {
       title,
       name,
+      email,
       datetime,
       location,
       description,
