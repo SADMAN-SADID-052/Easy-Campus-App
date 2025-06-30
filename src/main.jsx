@@ -7,6 +7,7 @@ import Events from "./Pages/Events";
 import AddEvent from "./Pages/AddEvent";
 import MyEvent from "./Pages/MyEvent";
 import Login from "./Pages/Login";
+import Register from "./Pages/Register";
 import AuthProvider from "./Provider/AuthProvider";
 import AuthLayout from "./Layouts/AuthLayout";
 
@@ -21,8 +22,8 @@ createRoot(document.getElementById("root")).render(
           <Route path="myEvent" element={<MyEvent></MyEvent>} />
 
           <Route path="auth" element={<AuthLayout />}>
-            <Route path="login" element={<Login />} />
-            {/* <Route path="register" element={<Register />} /> */}
+            <Route path="/auth/login" element={<Login />} />
+            <Route path="/auth/register" element={<Register></Register>} />
           </Route>
         </Routes>
       </BrowserRouter>

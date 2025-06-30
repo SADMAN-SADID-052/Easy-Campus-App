@@ -131,7 +131,7 @@ const { user, logOut } = useContext(AuthContext);
             </div>
           ) : (
             <Link to="/auth/login">
-              <p className="text-[#0099FF] p-7 font-bold hover:text-white text-xl">Login</p>
+              <p className="text-[#0099FF] p-7 font-bold hover:text-white text-xl">SignIn</p>
             </Link>
           )}
         </div>

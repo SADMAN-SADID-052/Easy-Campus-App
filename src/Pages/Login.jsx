@@ -62,7 +62,7 @@ const Login = () => {
   return (
     <div className="contain py-10">
       <div className="max-w-lg mx-auto shadow px-6 py-7 rounded overflow-hidden mt-16 border-2 border-[#22d3ee]">
-        <h2 className="text-2xl uppercase font-medium mb-3 text-center">Login</h2>
+        <h2 className="text-2xl uppercase font-medium mb-3 text-center">Signin</h2>
         <form onSubmit={handleLogin}>
           <div className="space-y-2">
             <div>
