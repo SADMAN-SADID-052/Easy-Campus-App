@@ -1,4 +1,5 @@
 
+import Banner from '../Components/Banner';
 import Navbar from '../Shared/Navbar';
 
 
@@ -9,10 +10,11 @@ const Home = () => {
         <div>
 
             <Navbar></Navbar>
+            <Banner></Banner>
            
            <div className='max-w-6xl mx-auto'>
            
-           <p>This is Home page</p>
+           
             
            </div>
             
