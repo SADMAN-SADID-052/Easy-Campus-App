@@ -28,7 +28,7 @@ const Events = () => {
   const fetchEvents = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/event");
+      const response = await axios.get("https://event-management-server-mu.vercel.app/event");
       const sortedEvents = (response.data.events || []).sort(
         (a, b) => new Date(b.datetime) - new Date(a.datetime)
       );
@@ -78,7 +78,7 @@ const Events = () => {
 
     try {
       const res = await axios.patch(
-        `http://localhost:5000/event/${event._id}`,
+        `https://event-management-server-mu.vercel.app/event/${event._id}`,
         { email: user.email }
       );
       if (res.data.success) {

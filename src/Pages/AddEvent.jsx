@@ -30,7 +30,7 @@ const AddEvent = () => {
       attendeeCount,
     };
 
-    fetch("http://localhost:5000/addEvent", {
+    fetch("https://event-management-server-mu.vercel.app/addEvent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -40,7 +40,7 @@ const AddEvent = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         // Swal.fire({
         //   title: "Success!",
         //   text: "New Car Added Successfully!!",
@@ -54,7 +54,7 @@ const AddEvent = () => {
       });
     navigate("/events");
 
-    console.log("Event added:", newEvent);
+    // console.log("Event added:", newEvent);
 
     Swal.fire({
       icon: "success",
