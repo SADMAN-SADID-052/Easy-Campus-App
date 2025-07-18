@@ -1,4 +1,4 @@
-# Event Management System
+# Easy Campus
 
 A web application for managing and attending events efficiently.
 
