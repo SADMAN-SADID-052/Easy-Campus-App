@@ -17,7 +17,7 @@ const Admission = () => {
 
   useEffect(() => {
 
-    axios.get("http://localhost:5000/colleges")
+    axios.get("https://event-management-server-mu.vercel.app/colleges")
       .then(res => setColleges(res.data))
       .catch(err => console.error("Error fetching colleges:", err));
   }, []);
@@ -30,7 +30,7 @@ const Admission = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/admissions", {
+      const response = await axios.post("https://event-management-server-mu.vercel.app/admissions", {
         ...formData,
         collegeId: selectedCollege._id,
         collegeName: selectedCollege.name
@@ -61,7 +61,7 @@ const Admission = () => {
         {colleges.map(college => (
           <div
             key={college._id}
-            className="p-4 border rounded hover:bg-blue-50 cursor-pointer"
+            className="p-4 border rounded hover:bg-blue-600 cursor-pointer"
             onClick={() => setSelectedCollege(college)}
           >
             {college.name}
@@ -71,11 +71,11 @@ const Admission = () => {
 
       {selectedCollege && (
         <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md">
-          <h3 className="text-xl font-semibold mb-4">
+          <h3 className="text-xl font-semibold mb-4 text-sky-600">
             Apply to: {selectedCollege.name}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input name="name" placeholder="Candidate Name" value={formData.name} onChange={handleInputChange} required className="input input-bordered" />
+            <input name="name" placeholder="Candidate Name" value={formData.name} onChange={handleInputChange} required className="input input-bordered " />
             <input name="subject" placeholder="Subject" value={formData.subject} onChange={handleInputChange} required className="input input-bordered" />
             <input name="email" type="email" placeholder="Email" value={formData.email} onChange={handleInputChange} required className="input input-bordered" />
             <input name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleInputChange} required className="input input-bordered" />

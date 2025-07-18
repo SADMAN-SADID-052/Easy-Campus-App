@@ -11,7 +11,7 @@ const CollegeDetails = () => {
   useEffect(() => {
     const fetchCollege = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/colleges/${id}`);
+        const res = await axios.get(`https://event-management-server-mu.vercel.app/colleges/${id}`);
         setCollege(res.data);
       } catch (error) {
         console.error("Error fetching college details:", error);

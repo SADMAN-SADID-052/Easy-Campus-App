@@ -13,7 +13,7 @@ const College = () => {
 
   const fetchColleges = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/colleges");
+      const res = await axios.get("https://event-management-server-mu.vercel.app/colleges");
       setColleges(res.data || []);
     } catch (error) {
       console.error("Failed to fetch colleges:", error);
