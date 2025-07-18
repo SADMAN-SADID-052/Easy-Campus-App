@@ -1,63 +1,65 @@
-import {  useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link, NavLink } from "react-router";
 
-;
-
 const Navbar = () => {
-const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [searchText, setSearchText] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    // console.log("Search:", searchText); // Replace with actual search logic
+  };
 
   const links = (
     <>
       <li>
         <NavLink
           className={({ isActive }) =>
-            `flex items-center   ${isActive ? "text-white" : "text-[#0099FF]"}`
+            `flex items-center ${isActive ? "text-white" : "text-[#0099FF]"}`
           }
           to="/"
         >
-          <p className="text-sm font-bold ">Home</p>
+          <p className="text-sm font-bold">Home</p>
         </NavLink>
       </li>
       <li>
         <NavLink
           className={({ isActive }) =>
-            `flex items-center  ${isActive ? " text-white" : "text-[#0099FF]"}`
+            `flex items-center ${isActive ? "text-white" : "text-[#0099FF]"}`
           }
-          to="/events"
+          to="/colleges"
         >
-          <p className="text-sm font-bold ">Events</p>
+          <p className="text-sm font-bold">Colleges</p>
         </NavLink>
       </li>
       <li>
         <NavLink
           className={({ isActive }) =>
-            `flex items-center  ${isActive ? " text-white" : "text-[#0099FF]"}`
+            `flex items-center ${isActive ? "text-white" : "text-[#0099FF]"}`
           }
-          to="/addEvent"
+          to="/addmis"
         >
-          <p className="text-sm font-bold ">Add Event</p>
+          <p className="text-sm font-bold">Admission</p>
         </NavLink>
       </li>
       <li>
         <NavLink
           className={({ isActive }) =>
-            `flex items-center  ${isActive ? " text-white" : "text-[#0099FF]"}`
+            `flex items-center ${isActive ? "text-white" : "text-[#0099FF]"}`
           }
-          to="/myEvent"
+          to="/myCol"
         >
-          <p className="text-sm font-bold ">My Event</p>
+          <p className="text-sm font-bold">My College</p>
         </NavLink>
       </li>
-     
- 
     </>
   );
 
   return (
     <div>
-      <div className="navbar shadow-sm   bg-[#001F3F]">
+      <div className="navbar shadow-sm bg-[#001F3F]">
         <div className="navbar-start">
           <div className="dropdown text-white text-3xl bg-amber-700 rounded-md">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -78,26 +80,45 @@ const { user, logOut } = useContext(AuthContext);
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-black rounded-box z-10 mt-4 w-52 p-2 shadow "
+              className="menu menu-sm dropdown-content bg-black rounded-box z-10 mt-4 w-52 p-2 shadow"
             >
               {links}
             </ul>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center ml-3">
             <img
               className="w-12"
               src="https://img.icons8.com/?size=96&id=fTBV7GkKahC6&format=png"
               alt="Logo"
             />
-            <p class="text-2xl font-extrabold bg-gradient-to-r from-[#60a5fa] to-[#22d3ee] bg-clip-text text-transparent ml-2">
-              EventNest
+            <p className="text-2xl font-extrabold bg-gradient-to-r from-[#60a5fa] to-[#22d3ee] bg-clip-text text-transparent ml-2">
+              EasyCampus
             </p>
           </div>
         </div>
+
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
-        <div className="navbar-end">
+
+        <div className="navbar-end flex gap-3">
+          {/* 🔍 Search Input */}
+          <form onSubmit={handleSearch} className="flex">
+            <input
+              type="text"
+              placeholder="Search college"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              className="px-3 py-1 rounded-l-md text-white focus:outline-accent "
+            />
+            <button
+              type="submit"
+              className="bg-[#0099FF] text-white px-3 rounded-r-md hover:bg-[#0077cc]"
+            >
+              Search
+            </button>
+          </form>
+
           {user ? (
             <div className="relative">
               <img
@@ -112,7 +133,6 @@ const { user, logOut } = useContext(AuthContext);
                     {user.displayName}
                   </div>
                   <hr />
-                
                   <button
                     onClick={logOut}
                     className="w-full text-left px-4 py-2 text-sm text-white hover:bg-black font-bold btn btn-primary mt-2"

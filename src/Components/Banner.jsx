@@ -4,28 +4,28 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 const Banner = () => {
   const slides = [
     {
-      img: "",
-      title: "New Year Celebrations",
-      subtitle: "Started on 25th July, 2025",
-      tagline: "We Design Simple, Easy And Modern Themes"
+      img: "https://plus.unsplash.com/premium_photo-1730658556676-bcf03b6f38e4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RGFoYWthJTIwQ2l0eSUyMENvbGxlZ2V8ZW58MHx8MHx8fDA%3D",
+      title: "Dhaka City College",
+      subtitle: "Admission on 17th July, 2025",
+      tagline: "Learn More"
     },
     {
-      img: "https://img.freepik.com/premium-photo/smart-city-internet-technology-concept_31965-6911.jpg?ga=GA1.1.687432857.1714536364&semt=ais_hybrid&w=740",
-      title: "Smart Control Room Solutions",
-      subtitle: "Started on 12th Jan, 2016",
-      tagline: "We Connect Cities and Technology"
+      img: "https://media.istockphoto.com/id/620981310/photo/bangladesh-dhaka.webp?a=1&b=1&s=612x612&w=0&k=20&c=8AxznaMsAIR_MeRxeJVqUI_zb013c89o9UKOdbEjmJg=",
+      title: "Dhaka Science College, Dhaka",
+      subtitle: "Admission on 18th July, 2025",
+      tagline: "Join And Enjoy"
     },
     {
-      img: "https://img.freepik.com/premium-photo/innovated-building-architecture-inventive-engineering_31965-264421.jpg?ga=GA1.1.687432857.1714536364&semt=ais_hybrid&w=740",
-      title: "Efficiency in Engineering",
-      subtitle: "Started on 1st Mar, 2017",
-      tagline: "Simplicity Meets Functionality"
+      img: "https://images.unsplash.com/photo-1597234670730-93ef4628e124?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8TW9oYW1tYWRwdXIlMjBHb3Zlcm5tZW50JTIwQ29sbGVnZXxlbnwwfHwwfHx8MA%3D%3D",
+      title: "Mohammadpur Govt. College",
+      subtitle: "Admission on 19st August, 2025",
+      tagline: "Join And Enjoy"
     },
     {
-      img: "https://img.freepik.com/free-photo/man-holding-smartphone-with-apartment-buildings-hologram_23-2149369107.jpg?ga=GA1.1.94081497.1723952170&semt=ais_hybrid",
-      title: "Smart City with Holographic Tech",
-      subtitle: "Started on 10th Nov, 2018",
-      tagline: "Modernizing Urban Experiences"
+      img: "https://images.unsplash.com/photo-1626964143945-b13d22dfe399?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QmFuZ2xhJTIwQ29sbGVnZSUyQyUyMERoYWthfGVufDB8fDB8fHwwd",
+      title: "Dhaka Bangla College",
+      subtitle: "Admission on 20th August, 2025",
+      tagline: "Join And Enjoy"
     },
   ];
 

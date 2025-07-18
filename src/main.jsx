@@ -3,14 +3,16 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router";
 import Main from "./Layouts/Main";
-import Events from "./Pages/Events";
-import AddEvent from "./Pages/AddEvent";
-import MyEvent from "./Pages/MyEvent";
+
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import AuthProvider from "./Provider/AuthProvider";
 import AuthLayout from "./Layouts/AuthLayout";
 import PrivateRoute from "./Routes/PrivateRoute";
+import College from "./Pages/College";
+import CollegeDetails from "./Pages/CollegeDetails";
+import Admission from "./Pages/Admission";
+import MyCollege from "./Pages/MyCollege";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -18,25 +20,27 @@ createRoot(document.getElementById("root")).render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main></Main>} />
-          <Route path="/events" element={
+          <Route path="/colleges" element={
             
             <PrivateRoute>
 
-               <Events></Events>
+               <College></College>
             </PrivateRoute>
            
             
             
             } />
-          <Route path="/addEvent" element={
+          <Route path="/addmis" element={
             <PrivateRoute>
-              <AddEvent></AddEvent>
+               <Admission></Admission>
             </PrivateRoute>
             } />
-          <Route path="myEvent" element={
+          <Route path="myCol" element={
             
-            <PrivateRoute> <MyEvent></MyEvent></PrivateRoute>
+            <PrivateRoute><MyCollege></MyCollege></PrivateRoute>
            } />
+
+           <Route path="/colleges/:id" element={<CollegeDetails />} />
 
           <Route path="auth" element={<AuthLayout />}>
             <Route path="/auth/login" element={<Login />} />
